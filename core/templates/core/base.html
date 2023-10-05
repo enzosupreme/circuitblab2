@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>{% block title %}{% endblock %} | Circuit Bored</title>
+    </head>
+
+    <body class="bg-auto bg-green-800 flex flex-col min-h-screen">
+        <nav class="py-2 px-2 flex justify-between bg-black items-center border-b border-gray-200">
+            <a href="{% url 'browse:index' %}">
+                <img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
+                class="pr-5 object-scale-down h-20 w-40"/>
+                </a>
+        <div class="mt-7 pl-24 text-center">
+       <a href="/">
+        <h2 class="mb-12 text-2xl text-center text-yellow-500 hover:text-yellow-500">Circuit Bored</h2>
+
+        </a>
+    </div>
+            <div class="space-x-6">
+
+
+                {% if request.user.is_authenicated %}
+                    <a href="{% url 'projects:new' %}" class="text-lg font-semibold text-yellow-700 hover:text-white">Add Project</a>
+
+                {% else %}
+                    <a href="{% url 'browse:index' %}" class="text-lg font-semibold text-yellow-700 hover:text-white">Projects</a>
+                    <a href="{% url 'core:commission' %}" class="text-lg font-semibold text-yellow-700 hover:text-white">Commission</a>
+                    <a href="https://circuitboredlab.etsy.com" class="px-6 py-3 text-lg font-semibold bg-green-700 text-white rounded-xl hover:bg-yellow-500">Shop</a>
+                {% endif %}
+            </div>
+        </nav>
+        <div class="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="py-6 px-6 flex justify-between bg-purple-900 mt-auto">
+            <div class="w-2/3 pr-10 py-5">
+                <h3 class="mb-5 font-semibold text-green-700 hover:text-yellow-700"></h3>
+
+                <a href="{% url 'core:services' %}" class="pt-10 text-s text-green-800 hover:text-yellow-800">circuitboredlab@gmail.com</a>
+            </div>
+
+            <div class="w-1/9">
+                <ul class="space-y-2">
+                    <li><a href="https://github.com/enzosupreme/" class="text-s text-purple-400 hover:text-yellow-500">Github</a></li>
+                    <li><a href="https://www.instagram.com/circuitboredlab/" class="text-s text-purple-400 hover:text-yellow-500">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCCEIhKijXbmY8ajvEMQeXsw/" class="text-s text-purple-400 hover:text-yellow-500">Youtube</a></li>
+                    <li><a href="https://x.com/circuitboredlab.com/" class="text-s text-purple-400 hover:text-yellow-500">twitter|x</a></li>
+                </ul>
+            </div>
+
+            <div class="w-6/9 pt-9 pr-5">
+                <h3 class="text-2xl mb-5 font-semibold text-green-700">
+                    <a href="{% url 'browse:index' %}" class="justify-center items-center">
+                    <img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
+                    class="h-10 w-10">
+                    </a>
+                </h3>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
