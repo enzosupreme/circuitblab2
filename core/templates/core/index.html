@@ -32,7 +32,7 @@
         <div class="grid grid-cols-3 gap-3">
             {% for category in categories %}
             <div>
-                    <div class="p-6 bg-black rounded-xl">
+                    <div class="p-3 bg-black rounded-xl">
                         <a href="{% url 'browse:index' %}?query={{ query }}&category={{ category.id }}">
                             <h2 class="text-sm sm:text-md lg:text-lg text-white hover:text-purple-700">{{ category.name }}</h2>
                             <p class="text-purple-500"> {{ category.projects.count }} projects</p>
