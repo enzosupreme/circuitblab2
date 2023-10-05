@@ -11,14 +11,14 @@
     </head>
 
     <body class="bg-auto bg-green-800 flex flex-col min-h-screen">
-        <nav class=" text-sm py-2 px-2 flex justify-between bg-black items-center border-b border-gray-200">
+        <nav class="py-2 px-2 flex justify-between bg-black items-center border-b border-gray-200">
             <a href="{% url 'browse:index' %}">
                 <img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
                 class="pr-5 object-scale-down h-20 w-40"/>
                 </a>
         <div class="mt-7 pl-24 text-center">
        <a href="/">
-        <h2 class="mb-12 text-sm text-center text-yellow-500 hover:text-yellow-500">Circuit Bored</h2>
+        <h2 class="mb-12 text-sm sm:text-md lg:text-lg text-center text-yellow-500 hover:text-yellow-500">Circuit Bored</h2>
 
         </a>
     </div>
@@ -26,12 +26,12 @@
 
 
                 {% if request.user.is_authenicated %}
-                    <a href="{% url 'projects:new' %}" class="text-sm font-semibold text-yellow-700 hover:text-white">Add Project</a>
+                    <a href="{% url 'projects:new' %}" class="text-sm sm:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">Add Project</a>
 
                 {% else %}
-                    <a href="{% url 'browse:index' %}" class="text-sm font-semibold text-yellow-700 hover:text-white">Projects</a>
-                    <a href="{% url 'core:commission' %}" class="text-sm font-semibold text-yellow-700 hover:text-white">Commission</a>
-                    <a href="https://circuitboredlab.etsy.com" class="px-6 py-3 text-sm font-semibold bg-green-700 text-white rounded-xl hover:bg-yellow-500">Shop</a>
+                    <a href="{% url 'browse:index' %}" class="text-sm sm:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">Projects</a>
+                    <a href="{% url 'core:commission' %}" class="text-sm sm:text-md lg:text-lg font-semibold text-yellow-700 hover:text-white">Commission</a>
+                    <a href="https://circuitboredlab.etsy.com" class="px-6 py-3 text-sm sm:text-md lg:text-lg font-semibold bg-green-700 text-white rounded-xl hover:bg-yellow-500">Shop</a>
                 {% endif %}
             </div>
         </nav>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="w-6/9 pt-9 pr-5">
-                <h3 class="text-sm mb-5 font-semibold text-green-700">
+                <h3 class="text-sm sm:text-md lg:text-lg mb-5 font-semibold text-green-700">
                     <a href="{% url 'browse:index' %}" class="justify-center items-center">
                     <img src="https://raw.githubusercontent.com/enzosupreme/cbl-images/main/logo.png"
                     class="h-10 w-10">

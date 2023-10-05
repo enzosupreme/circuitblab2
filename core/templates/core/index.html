@@ -4,7 +4,7 @@
 {% block content %}
 
     <div class="px-6 py-10 bg-green-900 rounded-xl">
-        <h2 class="mb-8 text-sm pr-8 text-center text-yellow-500">Recent Projects</h2>
+        <h2 class="mb-8 text-2xl pr-8 text-center text-yellow-500">Recent Projects</h2>
 
         <form method="get" action="{% url 'browse:index' %}">
             </form>
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="p-6 bg-yellow-600 rounded-b-xl">
-                        <h2 class="text-sm text-white">{{ project.name }}</h2>
+                        <h2 class="text-sm sm:text-md lg:text-lg text-white">{{ project.name }}</h2>
                     </div>
                 </a>
             </div>
@@ -27,14 +27,14 @@
     </div>
 
     <div class="mt-6 px-6 py-4 bg-green-800 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center text-purple-500">Project Type</h2>
+        <h2 class="mb-12 text-sm sm:text-md lg:text-lg text-center text-purple-500">Project Type</h2>
 
         <div class="grid grid-cols-3 gap-3">
             {% for category in categories %}
             <div>
                     <div class="p-6 bg-black rounded-xl">
                         <a href="{% url 'browse:index' %}?query={{ query }}&category={{ category.id }}">
-                            <h2 class="text-sm text-white hover:text-purple-700">{{ category.name }}</h2>
+                            <h2 class="text-sm sm:text-md lg:text-lg text-white hover:text-purple-700">{{ category.name }}</h2>
                             <p class="text-purple-500"> {{ category.projects.count }} projects</p>
 
                         </a>
