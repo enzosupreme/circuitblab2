@@ -11,7 +11,7 @@
 
     <div class="p-6 bg-green-900 rounded-xl">
         <a href="{% url 'browse:index' %}">
-        <h1 class="mb-6 text-3xl text-yellow-500 hover:text-yellow-700">{{ projects.name }}</h1>
+        <h1 class="mb-6 text-xs sm:text-md lg:text-lg xl:text-xl text-yellow-500 hover:text-yellow-700">{{ projects.name }}</h1>
         <p class="text-white">
             <strong class="text-yellow-800">Project Log:</strong><br>
             {{ projects.description  }}
@@ -20,23 +20,24 @@
         <br>
             <div class="grid grid-cols-3 space-x-5">
             {% if projects.github %}
-                <a href="{{ projects.github }}" class=" inline-block mt-6 px-6 py-3 text-lg font-semibold bg-teal-700 text-white rounded-xl hover:bg-teal-800">Github</a>
+                <a href="{{ projects.github }}" class=" inline-block mt-6 px-6 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-teal-700 text-white rounded-xl hover:bg-teal-800">Github</a>
             {% endif %}
             {% if projects.youtube %}
-                <a href="{{ projects.youtube }}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-red-700 text-white rounded-xl hover:bg-red-800">Youtube</a>
+                <a href="{{ projects.youtube }}" class="inline-block mt-6 px-6 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-red-700 text-white rounded-xl hover:bg-red-800">Youtube</a>
             {% endif %}
             {% if projects.shop %}
-                <a href="{{ projects.shop }}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-purple-900 text-white rounded-xl hover:bg-purple-700">Buy</a>
+                <a href="{{ projects.shop }}" class="inline-block mt-6 px-6 py-3 text-xs sm:text-md lg:text-lg xl:text-xl font-semibold bg-purple-900 text-white rounded-xl hover:bg-purple-700">Buy</a>
             {% endif %}
             </div>
         <br></br>
         <p class=" text-purple-900"><strong>Posted: </strong>{{ projects.created_at }}</p>
             </div>
 </div>
+</form>
 
  <div class="mt-6 px-6 py-12 bg-green-900 rounded-xl">
       <a href="{% url 'browse:index' %}?query={{ query }}&category={{ projects.category.id }}">
-        <h2 class="mb-12 text-2xl text-center text-yellow-500">More {{ projects.category }}</h2>
+        <h2 class="mb-12 text-xs sm:text-md lg:text-lg xl:text-xl text-center text-yellow-500">More {{ projects.category }}</h2>
       </a>
         <div class="grid grid-cols-3 gap-3">
             {% for project in related_projects %}
@@ -48,7 +49,7 @@
                     </div>
 
                     <div class="p-6 bg-yellow-600 rounded-b-xl">
-                        <h2 class="text-2xl text-white">{{ project.name }}</h2>
+                        <h2 class="text-xs sm:text-md lg:text-lg xl:text-xl text-white">{{ project.name }}</h2>
                     </div>
                 </a>
             </div>
